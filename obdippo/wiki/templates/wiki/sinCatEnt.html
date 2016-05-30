@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ cat_name }}</title>
+</head>
+<body>
+{% if all_entries %}
+    <ul>
+        {% for entry in all_entries %}
+            <li>
+                <div style="background: yellow">{{ entry.text }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Нет статей в этой категории</p>
+{%endif%}
+</body>
+</html>
