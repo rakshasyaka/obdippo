@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from .models import Category, Entry, Comment
 
+from django.views.generic import TemplateView
+
 
 def index(request):
     all_categories = Category.objects.all()
@@ -18,3 +20,7 @@ def entries_in_cat(request, cat_name):
         'all_entries': all_entries
     }
     return render(request, 'wiki/sinCatEnt.html', context)
+
+
+class HomeView(TemplateView):
+    template_name = "home.html"
