@@ -2,6 +2,35 @@
 <html>
 <head>
     <title>Отдел БДиППО</title>
+    <style>
+       a{
+        display:block;
+        font-family: arial;
+        font-size: 1em;
+        text-decoration: none;
+        border: 1px solid #84c630;
+        border-radius: 5px;
+        width: 50%;
+        text-align: center;
+        background-color: #a4a980;
+    }
+       li{
+        list-style: none;
+        /*margin: 2em;*/
+        margin-right: 20%;
+        margin-left: 20%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+       }
+       .content {
+        border: 2px solid #a4c6a8;
+        border-radius: 10px;
+        background-color: #84c6ad;
+        width: 40%;
+        align-content: center;
+        box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+       }
+    </style>
 </head>
 <body>
     <h1>Домашняя страница</h1>
@@ -9,5 +38,12 @@
     <p><strong>Отдела Баз Данных и Прикладного Программного Обеспечения</strong></p>
     <br>
     <p><em>Заглушка</em></p>
+
+    <ul class="content">
+        <li><a href="{% url 'upd_calendar:draw_calendar' %}">Календарь обновлений</a></li>
+        <li><a href="{% url 'wiki:index' %}">База знаний</a></li>
+    </ul>
+
+
 </body>
 </html>

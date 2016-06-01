@@ -48,6 +48,7 @@ def event_detail(request, event_date):
     return render(request, 'upd_calendar/event.html', context)
 
 
+# Что ЭТО?! TODO: сжечь!
 def redirect_to_event(request):
     event_date = '7/5/2016'
     return HttpResponseRedirect(reverse('event_detail', args=(event_date,)))
