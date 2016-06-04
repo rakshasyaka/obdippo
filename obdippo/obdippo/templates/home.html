@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    {% load staticfiles %}
     <title>Отдел БДиППО</title>
+    <link href="{% static 'img/obdippo32_1.png' %}" rel="icon"/>
     <style>
        a{
         display:block;
@@ -30,20 +32,41 @@
         align-content: center;
         box-shadow: 0 0 10px rgba(0,0,0,0.5); 
        }
+       header{
+        background-color: green;
+        
+       }
+       .logo{
+        display: inline-block;
+        width: 20%;
+        /*background-color: lightgray;*/
+        float: left;
+       }
+       h1{
+        font-family: arial;
+        font-size: 3em;
+        display: inline-block;
+        width: 45%;
+        padding: 1.2em;
+        /*float: left;*/
+        /*background-color: red;*/
+       }
     </style>
 </head>
 <body>
-    <h1>Домашняя страница</h1>
-    <p>внутреннего портала</p>
-    <p><strong>Отдела Баз Данных и Прикладного Программного Обеспечения</strong></p>
+    <header>
+        <img class="logo" src="{% static 'img/obdippo80.svg' %}">
+        <h1>Отдел Баз Данных и Прикладного Программного Обеспечения</h1>
+    </header>
+    
     <br>
     <p><em>Заглушка</em></p>
 
     <ul class="content">
         <li><a href="{% url 'upd_calendar:draw_calendar' %}">Календарь обновлений</a></li>
         <li><a href="{% url 'wiki:index' %}">База знаний</a></li>
+        <li><a href="/admin/">Админка</a></li>
     </ul>
-
 
 </body>
 </html>

@@ -5,9 +5,10 @@
     <title>Update-Events Calendar</title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/calendar.css' %}">
-    <link href="{% static 'css/favicon-32x32_1.png' %}" rel="icon"/>
+    <link href="{% static 'img/obdippo32_1.png' %}" rel="icon"/>
 </head>
 <body>
+    <header><a href="/"><img src="{% static 'img/obdippo32.png' %}"></a></header>
     <div class="calendar">
         <h1>{{ today_m }} {{today.year}}</h1>
         <table>

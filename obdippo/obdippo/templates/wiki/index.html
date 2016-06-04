@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>сундук со сказками</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wiki_index.css' %}">
+    <link href="{% static 'img/obdippo32_1.png' %}" rel="icon"/>
+</head>
+<body>
+<header><a href="/"><img src="{% static 'img/obdippo32.svg' %}"></a></header>
+<div class="categs">
+    {% for category in all_categories %}
+        <span class="categ">{{ category }}</span>
+    {% endfor %}
+</div>
+<div class="latest_entr">
+    <ul>
+    {% for entry in three_entry %}
+        <li> 
+            <div class="entry">
+                <p class="e_title">{{ entry }}</p> 
+                <p class="e_text">{{entry.text}}</p>
+            </div>
+        </li>
+    {% endfor %}
+</div>
+<a href="{url }"></a>
+</ul>
+</body>
+</html>

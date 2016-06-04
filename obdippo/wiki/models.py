@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 
 class Category(models.Model):
@@ -9,16 +10,19 @@ class Category(models.Model):
 
 
 class Entry(models.Model):
-    title = models.SlugField()
+    title = models.CharField(max_length=100)
     publish = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
     image = models.ImageField(blank=True)
     category = models.ManyToManyField(Category)
     # Can add functional of estimate "question" state
-    state = models.BooleanField(default=True)  
+    state = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(safe):
+        return Httpreverse('detail_entry', kwargs={'pk': self.pk})
 
 
 class Comment(models.Model):

@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     # my apps
     'updcalendar',
     'wiki',
+    'obdippo',
     # std apps
     'django.contrib.admin',
     'django.contrib.auth',

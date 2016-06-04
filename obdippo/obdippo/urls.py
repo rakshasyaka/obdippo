@@ -15,11 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-
-from wiki.views import HomeView
+from django.shortcuts import render
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^$', render, {'template_name': 'home.html'}),
     url(r'^updcalendar/', include('updcalendar.urls', namespace='upd_calendar')),
     url(r'^wiki/', include('wiki.urls', namespace='wiki')),
     url(r'^admin/', admin.site.urls),
